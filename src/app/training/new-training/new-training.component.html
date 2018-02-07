@@ -7,18 +7,10 @@
     fxLayoutAlign="center">
       <mat-form-field>
         <mat-select placeholder="New Training">
-          <mat-option value="touch-toes">
-            Touch Toes
+          <mat-option *ngFor="let exercise of exercises" value="exercise.name">
+        {{exercise.name}}
           </mat-option>
-          <mat-option value="crunches">
-            Crunches
-          </mat-option>
-          <mat-option value="side-lunges">
-            Side lunges
-          </mat-option>
-          <mat-option value="burpees">
-            Burpees
-          </mat-option>
+
         </mat-select>
       </mat-form-field>
 
