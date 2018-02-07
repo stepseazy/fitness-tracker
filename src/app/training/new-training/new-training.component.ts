@@ -8,7 +8,7 @@ import {Exercise} from '../exercise.model';
 })
 export class NewTrainingComponent implements OnInit {
   @Output() trainingStart=new EventEmitter<void>();
-  exercises:Exercise[];
+  exercises:Exercise[]=[];
   constructor(private trainingService:TrainingService) { }
 
   ngOnInit() {
