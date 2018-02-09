@@ -15,7 +15,8 @@ import {MatButtonModule,
   MatProgressSpinnerModule,
   MatDialogModule,
   MatTableModule,
-  MatSortModule
+  MatSortModule,
+  MatPaginatorModule
 } from '@angular/material';
 
 @NgModule({
@@ -35,7 +36,8 @@ import {MatButtonModule,
     MatProgressSpinnerModule,
     MatDialogModule,
     MatTableModule,
-    MatSortModule
+    MatSortModule,
+    MatPaginatorModule
   ],
   exports:[
     MatButtonModule,
@@ -54,7 +56,8 @@ import {MatButtonModule,
   MatProgressSpinnerModule,
   MatDialogModule,
   MatTableModule,
-  MatSortModule
+  MatSortModule,
+  MatPaginatorModule
 ]
 })
 
