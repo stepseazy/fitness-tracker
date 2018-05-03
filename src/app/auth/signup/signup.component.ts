@@ -1,7 +1,7 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
+import { Store } from '@ngrx/store';
 
 import { AuthService } from '../auth.service';
 import { UIService } from '../../shared/ui.service';
@@ -16,10 +16,11 @@ export class SignupComponent implements OnInit {
   maxDate;
   isLoading$: Observable<boolean>;
 
-  constructor(private authService: AuthService,
+  constructor(
+    private authService: AuthService,
     private uiService: UIService,
-        private store: Store<fromRoot.State>
-  ) { }
+    private store: Store<fromRoot.State>
+  ) {}
 
   ngOnInit() {
     this.isLoading$ = this.store.select(fromRoot.getIsLoading);
@@ -33,5 +34,4 @@ export class SignupComponent implements OnInit {
       password: form.value.password
     });
   }
-
 }

@@ -12,10 +12,8 @@ import * as fromRoot from '../app.reducer';
 import * as UI from '../shared/ui.actions';
 import * as Auth from './auth.actions';
 
-
 @Injectable()
 export class AuthService {
-
   constructor(
     private router: Router,
     private afAuth: AngularFireAuth,
@@ -27,11 +25,11 @@ export class AuthService {
   initAuthListener() {
     this.afAuth.authState.subscribe(user => {
       if (user) {
-        this.store.dispatch(new Auth.SetAuthenticated())
+        this.store.dispatch(new Auth.SetAuthenticated());
         this.router.navigate(['/training']);
       } else {
         this.trainingService.cancelSubscriptions();
-        this.store.dispatch(new Auth.SetUnauthenticated())
+        this.store.dispatch(new Auth.SetUnauthenticated());
         this.router.navigate(['/login']);
       }
     });
@@ -72,5 +70,4 @@ export class AuthService {
   logout() {
     this.afAuth.auth.signOut();
   }
-
 }
